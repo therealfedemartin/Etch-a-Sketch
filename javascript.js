@@ -2,6 +2,7 @@
 const container = document.querySelector("#container");
 const askButton = document.querySelector("#askButton");
 
+
 function createGrid (info) {
 
     if (info >= 1 && info <= 100) {
@@ -13,7 +14,27 @@ function createGrid (info) {
             for (let j = 0; j < amount;j++){
                 const squares = document.createElement("div");
                 squares.classList.add("squares");
+                squares.style.opacity = 1;
                 lines.appendChild(squares);
+
+                squares.addEventListener('mouseover', function() {
+                
+                    squares.style.backgroundColor = "#efb810";
+                });
+
+                squares.addEventListener('click', function () {
+
+                    let opacity = parseFloat(squares.style.opacity);
+                    if (opacity > 0 ) {
+
+                    squares.style.opacity = (opacity - 0.1).toFixed(1);
+                    
+                    }
+                
+                });
+
+
+                
             }
         }      
     } else {
@@ -32,7 +53,7 @@ function removeGrid () {
 askButton.addEventListener('click', function() {
     
     removeGrid();  
-    
+
     let info = prompt("How many squares per side ? (max 100) ");
     createGrid(info);
 });

@@ -16,8 +16,8 @@ body {
     align-items: center;
     flex-shrink: 0;
     
-    min-height: 16px;
-    min-width: 16px;
+    min-height: 40px;
+    min-width: 40px;
     border: 5px solid #efb810;
 
 }
@@ -27,9 +27,17 @@ body {
     flex-shrink: 0;
     box-sizing: border-box;
 
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border: 0.1px solid lightslategray;
+    background-color: none;
     
   
+}
+
+#askButton {
+    border: none;
+    background-color: lightcoral;
+    color: #efb810;
+    font-size: 50px;
 }
